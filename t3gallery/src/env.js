@@ -7,7 +7,13 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    POSTGRES_URL: "postgres://default:IQ9YgmnNPGU5@ep-restless-grass-a44iqtjh-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
+    POSTGRES_URL: z
+      .string()
+      .url()
+      .refine(
+        (str) => !str.includes("postgres://default:IQ9YgmnNPGU5@ep-restless-grass-a44iqtjh-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"),
+        "You forgot to change the default URL",
+      ),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
