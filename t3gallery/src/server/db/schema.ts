@@ -22,7 +22,7 @@ export const images = createTable(
   "image",
   {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
+    name: varchar("name", { length: 256 }).notNull(),
     url: varchar("url", { length: 10424 }).notNull(),
     userId: varchar("userId", {length: 256}).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
