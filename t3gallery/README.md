@@ -44,6 +44,8 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 - [x] Use Next/Image component
 - [x] Error management (w/ Sentry)
 - [x] Routing/Image page (parallel route)
+- [x] Update upload button 
+- [x] ShadUIify (specifically toasts)
 - [] Delete button (w/ Server Actions)
 - [] Analytics (posthog)
 - [] Ratelimiting
